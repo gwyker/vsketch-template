@@ -12,7 +12,7 @@ class {{cookiecutter.class_name}}(vsketch.SketchClass):
         self.process(v)
 
     def process(self, v: vsketch.Vsketch):
-
+        pass
 
     def finalize(self, v: vsketch.Vsketch) -> None:
         v.vpype("linemerge linesimplify reloop linesort")
