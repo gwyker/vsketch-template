@@ -5,15 +5,17 @@ class {{cookiecutter.class_name}}(vsketch.SketchClass):
     # Sketch parameters:
     # radius = vsketch.Param(2.0)
 
-    def draw(self, vsk: vsketch.Vsketch) -> None:
-        vsk.size("{{cookiecutter.page_size}}", landscape={{cookiecutter.landscape}})
-        vsk.scale("{{cookiecutter.preferred_unit}}")
+    def draw(self, v: vsketch.Vsketch) -> None:
+        v.size("{{cookiecutter.page_size}}", landscape={{cookiecutter.landscape}})
+        v.scale("{{cookiecutter.preferred_unit}}")
 
-        # implement your sketch here
-        # vsk.circle(0, 0, self.radius, mode="radius")
+        self.process(v)
 
-    def finalize(self, vsk: vsketch.Vsketch) -> None:
-        vsk.vpype("linemerge linesimplify reloop linesort")
+    def process(self, v: vsketch.Vsketch):
+
+
+    def finalize(self, v: vsketch.Vsketch) -> None:
+        v.vpype("linemerge linesimplify reloop linesort")
 
 
 if __name__ == "__main__":
